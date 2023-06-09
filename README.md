@@ -16,17 +16,16 @@ The Go <a href="https://go.dev/doc/tutorial/" target="golangtuts">tutorials</a> 
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``PQPORT`` (defaults to 5432 if the ``PQPORT`` environment variable is empty or not found)
     <br /><br />To set the environment variables, open a Terminal or Command Prompt window.  Linux/Bash Terminal uses the ``export`` command, and Windows Command Prompt uses the ``set`` command.
 <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;***Examples for setting environment variables in Windows and in Linux/Mac***:
-<br />&nbsp;&nbsp;&nbsp;&nbsp;Set the ``PQHOST`` environment variable to "mypostgres.example.com", ``PQUSER`` to "test.username", and ``PQPW`` to "test.pw"
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Set the ``PQHOST`` environment variable to "mypostgres.example.com", ``PQUSER`` to "test.username", and ``PQPW`` to "test.pw":
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Windows, you would type the following into a Command Prompt window after the ``>`` prompt:
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``set PQHOST=mypostgres.example.com``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``set PQUSER=test.username``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``set PQPW=test.pw``
-    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In a Linux/Bash Terminal (Mac), you would type the following into a Terminal window after the ``$`` prompt:
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In a Linux/Bash Terminal (Mac), you would type the following into a Terminal window after the ``$`` prompt:
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``export PQHOST=mypostgres.example.com``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``export PQUSER=test.username``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``export PQPW=test.pw``
-    <br /><br />2. After setting all of the necessary environment variables, in the same Terminal or Command Prompt window, navigate to 
-    <br />``./albums/web-service-gin`` and type the following commands at the prompt (``$`` or ``>``):
+    <br /><br />2. After setting all of the necessary environment variables, in the same Terminal or Command Prompt window, navigate to ``./albums/web-service-gin`` and type the following commands at the prompt (``$`` or ``>``):
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``go mod init ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``go work use . ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``go mod edit -replace example.com/dbaccess=../dbaccess ``
