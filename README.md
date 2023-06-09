@@ -4,7 +4,7 @@
 The Go <a href="https://go.dev/doc/tutorial/" target="golangtuts">tutorials</a> demonstrated separately how to create and access modules, how to connect to a postgres database, and how to create api endpoints. I am combining the three lessons for the "Albums" project.
 
 Usage (assuming <a href="https://go.dev/doc/install" target="goinstall">Go is installed</a>):<br /><br />
-Edit ``./albums/dbaccess/dbaccess.go`` and modify the constants to appropriate values for your postgres instance (``line 10``)<br />
+Edit ``./albums/dbaccess/dbaccess.go`` and modify the constants to appropriate values for your postgres instance (``line 10``). &nbsp;This hard-coding is obviously not in accordance with best security practices, but we will keep it simple for the purposes of this tutorial:
     <h4>&nbsp;&nbsp;``const ( ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``host = "your.hostname.here" ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``port = 5432 ``
