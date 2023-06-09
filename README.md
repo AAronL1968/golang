@@ -1,7 +1,7 @@
 # golang
 <h2>A place for my Go tutorials, etc.</h2>
 
-The Go <a href="https://go.dev/doc/tutorial/" target="golangtuts">tutorials</a> demonstrated separately how to create and access modules, and how to connect to a postgres database and how to create api endpoints. I am combining the three lessons for the "Albums" project.
+The Go <a href="https://go.dev/doc/tutorial/" target="golangtuts">tutorials</a> demonstrated separately how to create and access modules, how to connect to a postgres database, and how to create api endpoints. I am combining the three lessons for the "Albums" project.
 
 Usage (assuming Go is installed):<br /><br />
 Edit ``./albums/dbaccess/dbaccess.go`` and modify the constants to appropriate values for your postgres instance (line 10)<br />
