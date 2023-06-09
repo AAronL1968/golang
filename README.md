@@ -12,11 +12,14 @@ Edit ``./albums/dbaccess/dbaccess.go`` and modify the constants to appropriate v
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``password = "your.password" ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``dbname = "your.database.name" ``
    <br />``)``</h4>  
-In a Terminal or Command Prompt window, navigate to ``./albums/web-service-gin`` and type the following at the prompt (``$`` or ``>``):
-    <h4>&nbsp;&nbsp;&nbsp;&nbsp;``go work use . ``
+<br />This code will create a schema named ``tutorial_sandbox`` in the postgres database indicated by the constants above.  The schema will contain a single table named ``tutorial_sandbox.album`` which we can query and modify via the API endpoints we create.
+<br /><br />In a Terminal or Command Prompt window, navigate to ``./albums/web-service-gin`` and type the following commands at the prompt (``$`` or ``>``):
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;``go mod init ``
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;``go work use . ``
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;``go mod edit -replace example.com/dbaccess=../dbaccess ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``go mod tidy ``
     <br />&nbsp;&nbsp;&nbsp;&nbsp;``go run . ``</h4>
-Use curl in another Terminal or Command Prompt window to select and modify values, then verify with database selects.
+<br />Use **curl** in a ***separate*** Terminal or Command Prompt window to select and modify values, then verify with database selects.
 <br /><br />Get all albums:
     <h4>&nbsp;&nbsp;``curl http://localhost:8080/albums --header "Content-Type: application/json" --request "GET" ``</h4>
 <br /><br />Get the album having ID 3:
