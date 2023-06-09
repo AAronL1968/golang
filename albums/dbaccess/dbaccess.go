@@ -3,29 +3,51 @@ package dbaccess
 import (
 	"database/sql"
 	"fmt"
+	"os"
+	"strconv"
 
 	_ "github.com/lib/pq"
 )
 
-const (
-  host     = "your.hostname.here"
-  port     = 5432
-  user     = "your.username"
-  password = "your.password"
-  dbname   = "your.database.name"
-)
-
 type Album struct {
-	ID int
-	Title string
+	ID     int
+	Title  string
 	Artist string
-	Price float32
+	Price  float32
 }
 
 func getPGDB() (*sql.DB, error) {
+	pqhost, exists := os.LookupEnv("PQHOST")
+	if pqhost == "" || !exists {
+		pqhost = "localhost"
+	}
+	pquser, exists := os.LookupEnv("PQUSER")
+	if pquser == "" || !exists {
+		pquser = "postgres"
+	}
+	pqpw, exists := os.LookupEnv("PQPW")
+	if pqpw == "" || !exists {
+		pqpw = "password"
+	}
+	pqdb, exists := os.LookupEnv("PQDB")
+	if pqdb == "" || !exists {
+		pqdb = "postgres"
+	}
+	pqssl, exists := os.LookupEnv("PQSSL")
+	if pqssl == "" || !exists {
+		pqssl = "disable"
+	}
+	pqport, exists := os.LookupEnv("PQPORT")
+	if pqport == "" || !exists {
+		pqport = "5432"
+	}
+	pqportInt, err := strconv.Atoi(pqport)
+	if err != nil {
+		pqportInt = 5432
+	}
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
+		"password=%s dbname=%s sslmode=%s",
+		pqhost, pqportInt, pquser, pqpw, pqdb, pqssl)
 	db, err := sql.Open("postgres", psqlInfo)
 	return db, err
 }
