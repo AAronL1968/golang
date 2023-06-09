@@ -8,18 +8,18 @@ import (
 )
 
 const (
-	host     = "your.hostname.here"
-	port     = 5432
-	user     = "your.username"
-	password = "your.password"
-	dbname   = "your.database.name"
+  host     = "your.hostname.here"
+  port     = 5432
+  user     = "your.username"
+  password = "your.password"
+  dbname   = "your.database.name"
 )
 
 type Album struct {
-	ID     int
-	Title  string
+	ID int
+	Title string
 	Artist string
-	Price  float32
+	Price float32
 }
 
 func getPGDB() (*sql.DB, error) {
